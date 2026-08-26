@@ -1,0 +1,10 @@
+app.get("/catalog/tv/localnews_catalog.json", (req, res) => {
+  const metas = newsStreams.map(stream => ({
+    id: stream.id,
+    type: "tv",
+    name: stream.title,
+    poster: stream.logo
+  }));
+
+  res.json({ metas });
+});
